@@ -1,0 +1,14 @@
+README
+VOSM2DExplorer is a 2D explorer of Vision Open Statistical Models(VOSM)
+-------------------------------------------------------------------------------
+
+This distribution of VOSM2DExplorer includes:
+
+  3DPARTY               - the 3rd party library used -- nl.skybound.awt.DoublePolygon
+  AUTHORS               - current and former authors of VOSM2DExplorer
+  CHANGES               - history of changes for the library
+  COPYRIGHT             - describes the copyright of VOSM2DExplorer
+  README                - this file
+  VERSION               - version number of this release
+
+-------------------------------------------------------------------------------
