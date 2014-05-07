@@ -10,10 +10,9 @@
 *                                                                                                   *
 * Copyright (C):    2006~2014 by JIA Pei, all rights reserved.                                      *
 *                                                                                                   *
-*                   VOSM2DExplorer is free software under the terms of the GNU Lesser General 		*
-*					Public License (GNU LGPL) as published by the Free Software Foundation;			*
-*					either version 3.0 of the License, or (at your option) any later version.       *
-*                                                                                                   *
+*                   VOSM is free software under the terms of the GNU Lesser General Public License  *
+*                   (GNU LGPL) as published by the Free Software Foundation; either version 3.0 of  *
+*                   the License, or (at your option) any later version.                             *
 *                   You can use it, modify it, redistribute it, etc; and redistribution and use in  *
 *                   source and binary forms, with or without modification, are permitted provided   *
 *                   that the following conditions are met:                                          *
@@ -40,51 +39,123 @@
 *                   2) P. JIA. Audio-visual based HMI for an Intelligent Wheelchair.                *
 *                   PhD thesis, University of Essex, 2010.                                          *
 *                   http://www.visionopen.com/members/jiapei/publications/pei_thesischapter34.pdf   *
-*																									*
+*                                                                                                   *                                                                                                   *
 * Version:          1.0                                                                           	*
 * Author:           JIA Pei                                                                         *
 * Contact:          jp4work@gmail.com                                                               *
 * URL:              http://www.visionopen.com                                                       *
-* Create Date:      2010-12-25                                                                      *
+* Create Date:      2010-11-04                                                                      *
 * Modify Date:      2014-05-07                                                                      *
 ****************************************************************************************************/
-package com.visionopen.jiapei.smbasic;
 
-public class VO_Edge {
-    /** First vertex' index of this edge */
-    private int index1;
+package com.visionopen.jiapei.sm2d;
 
-    /** Second vertex' index of this edge */
-    private int index2;
+import java.awt.geom.Ellipse2D;
+import java.io.*;
 
-    /** Default constructor to create a VO_Edge object */
-    public VO_Edge() {}
+import javax.vecmath.Point2f;
 
-    /** Constructor to create a VO_Edge object with two vertexes' indexes */
-    public VO_Edge(int p1, int p2)
+import com.visionopen.jiapei.smbasic.VO_Shape;
+
+public class VO_Point2DDistributionModel {
+	/** 2D normal distribution can be represented by rotated ellipse */
+	protected Ellipse2D[]			m_VONormalizedEllipses;
+
+    /** Initialization */
+    protected void                  init()
     {
-        this.index1 = p1;
-        this.index2 = p2;
+    	
     }
 
-    /** Default constructor to create a VO_Edge object */
-    public boolean equals (final VO_Edge e)
+    /** Default constructor to create a VO_Point2DDistributionModel object */
+    public VO_Point2DDistributionModel() {}
+
+    /** Build Point Model */
+    void							VO_BuildPointDistributionModel(	final VO_Shape[] allAlignedShapes )
     {
-        if ( ( this.index1 == e.GetIndex1() && this.index2 == e.GetIndex2() ) ||
-            ( this.index1 == e.GetIndex2() && this.index2 == e.GetIndex1() ) )
-            return true;
-        else return false;
+    	
     }
 
-    /** Get first index of the first edge vertex */
-    public int GetIndex1() { return this.index1;}
+	/** Constrain respective single point according to its PDM */
+	static void						VO_ConstrainSinglePoint(Point2f pt, final Ellipse2D ellipse)
+	{
+		
+	}
+	
+	/** Scale all ellipses in this PDM */
+	static void						VO_ScalePDMEllipses(final Ellipse2D[] iEllipses, 
+														float scale,
+														Ellipse2D[] oEllipses)
+	{
+		
+	}
 
-    /** Get second index of the first edge vertex */
-    public int GetIndex2() { return this.index2;}
+	/** Constrain a shape into Point Distribution Models */
+	void							VO_ConstrainAllPoints(VO_Shape ioShape)
+	{
+		
+	}
 
-    /** Set the first index of the first edge vertex */
-    public void SetIndex1(int idx1) { this.index1 = idx1;}
+    /** Save Point Model, to a specified folder */
+    void                        	VO_Save(final String fd)
+    {
+    	
+    }
 
-    /** Set the second index of the second edge vertex */
-    public void SetIndex2(int idx2) { this.index2 = idx2;}
+    /** Load all parameters */
+    void                        	VO_Load(final String fd)
+    {
+    	
+    }
+
+    /** Load parameters for fitting */
+    void                        	VO_LoadParameters4Fitting(final String fd)
+    {
+    	if(fd != "")
+		{
+    		init();
+		    String folderDir = fd+"/Point2DDistributionModel";
+		    String filename = new String();
+		    FileReader filereader = null;
+		    BufferedReader in = null;
+		    String str = new String();
+		    String ss[] = null;
+		    
+		    int NbOfPoints = 0;
+			// Point2DDistributionModel
+		    try {
+			    filename = folderDir + "/Point2DDistributionModel.txt";
+			    filereader = new FileReader(filename);
+		        in = new BufferedReader(filereader);
+		        str = in.readLine();
+		        str = in.readLine();
+		        NbOfPoints = Integer.parseInt(str);
+		    } catch (IOException e) {
+		    	e.printStackTrace();
+		    }
+			
+		    // m_VONormalizedEllipses
+			try {
+			    filename = folderDir + "/m_VONormalizedEllipses.txt";
+			    filereader = new FileReader(filename);
+		        in = new BufferedReader(filereader);
+		        str = in.readLine();
+		        this.m_VONormalizedEllipses = new Ellipse2D[NbOfPoints];
+		        for(int i = 0; i < NbOfPoints; i++)
+		        {
+		        	if ( (str = in.readLine())!= null)
+			        {
+			        	ss = str.split(" ");
+//				        	this.m_VONormalizedEllipses[i];
+			        }
+		        }
+			} catch (IOException e) {
+		    	e.printStackTrace();
+		    }
+		}
+    }
+	
+	// Gets and Sets
+	Ellipse2D[]						GetPDMEllipses() { return this.m_VONormalizedEllipses; }
+
 }

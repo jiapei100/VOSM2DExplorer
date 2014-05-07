@@ -10,9 +10,10 @@
 *                                                                                                   *
 * Copyright (C):    2006~2014 by JIA Pei, all rights reserved.                                      *
 *                                                                                                   *
-*                   VOSM is free software under the terms of the GNU Lesser General Public License  *
-*                   (GNU LGPL) as published by the Free Software Foundation; either version 3.0 of  *
-*                   the License, or (at your option) any later version.                             *
+*                   VOSM2DExplorer is free software under the terms of the GNU Lesser General 		*
+*					Public License (GNU LGPL) as published by the Free Software Foundation;			*
+*					either version 3.0 of the License, or (at your option) any later version.       *
+*                                                                                                   *
 *                   You can use it, modify it, redistribute it, etc; and redistribution and use in  *
 *                   source and binary forms, with or without modification, are permitted provided   *
 *                   that the following conditions are met:                                          *
@@ -39,12 +40,12 @@
 *                   2) P. JIA. Audio-visual based HMI for an Intelligent Wheelchair.                *
 *                   PhD thesis, University of Essex, 2010.                                          *
 *                   http://www.visionopen.com/members/jiapei/publications/pei_thesischapter34.pdf   *
-*                                                                                                   *                                                                                                   *
+*																									*
 * Version:          1.0                                                                           	*
 * Author:           JIA Pei                                                                         *
 * Contact:          jp4work@gmail.com                                                               *
 * URL:              http://www.visionopen.com                                                       *
-* Create Date:      2010-11-04                                                                      *
+* Create Date:      2010-12-25                                                                      *
 * Modify Date:      2014-05-07                                                                      *
 ****************************************************************************************************/
 

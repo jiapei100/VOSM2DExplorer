@@ -10,10 +10,9 @@
 *                                                                                                   *
 * Copyright (C):    2006~2014 by JIA Pei, all rights reserved.                                      *
 *                                                                                                   *
-*                   VOSM2DExplorer is free software under the terms of the GNU Lesser General 		*
-*					Public License (GNU LGPL) as published by the Free Software Foundation;			*
-*					either version 3.0 of the License, or (at your option) any later version.       *
-*                                                                                                   *
+*                   VOSM is free software under the terms of the GNU Lesser General Public License  *
+*                   (GNU LGPL) as published by the Free Software Foundation; either version 3.0 of  *
+*                   the License, or (at your option) any later version.                             *
 *                   You can use it, modify it, redistribute it, etc; and redistribution and use in  *
 *                   source and binary forms, with or without modification, are permitted provided   *
 *                   that the following conditions are met:                                          *
@@ -40,51 +39,118 @@
 *                   2) P. JIA. Audio-visual based HMI for an Intelligent Wheelchair.                *
 *                   PhD thesis, University of Essex, 2010.                                          *
 *                   http://www.visionopen.com/members/jiapei/publications/pei_thesischapter34.pdf   *
-*																									*
+*                                                                                                   *                                                                                                   *
 * Version:          1.0                                                                           	*
 * Author:           JIA Pei                                                                         *
 * Contact:          jp4work@gmail.com                                                               *
 * URL:              http://www.visionopen.com                                                       *
-* Create Date:      2010-12-25                                                                      *
+* Create Date:      2010-11-04                                                                      *
 * Modify Date:      2014-05-07                                                                      *
 ****************************************************************************************************/
+
 package com.visionopen.jiapei.smbasic;
 
-public class VO_Edge {
-    /** First vertex' index of this edge */
-    private int index1;
 
-    /** Second vertex' index of this edge */
-    private int index2;
+import javax.vecmath.Point2f;
 
-    /** Default constructor to create a VO_Edge object */
-    public VO_Edge() {}
+import com.visionopen.jiapei.sm2d.VO_Shape2D;
 
-    /** Constructor to create a VO_Edge object with two vertexes' indexes */
-    public VO_Edge(int p1, int p2)
+public class VO_Triangle2D extends VO_Shape2D {
+    public enum ClockWiseOrNot { COUNTER_CLOCKWISE, CLOCKWISE};
+
+    /** Cached denominator for later Jacobian calculation */
+    protected float				m_dD;
+
+    /** private function to calculate cached denominator */
+    protected float 			Calc_dD()
     {
-        this.index1 = p1;
-        this.index2 = p2;
+								if(this.m_MatShape[0].length != 3)
+								{
+									System.out.println( "This is not a triangle!");
+									System.out.println( "Please ensure the shape has 3 columns");
+									System.exit(1);
+								}
+								if(this.m_MatShape.length != 2)
+								{
+									System.out.println( "This triangle is not in 2D!");
+									System.exit(1);
+								}
+
+								float x1, x2, x3, y1, y2, y3;
+	
+								x1 = this.m_MatShape[0][0];
+								x2 = this.m_MatShape[0][1];
+								x3 = this.m_MatShape[0][2];
+								y1 = this.m_MatShape[1][0];
+								y2 = this.m_MatShape[1][1];
+								y3 = this.m_MatShape[1][2];
+	
+								return (+x2*y3-x2*y1-x1*y3-x3*y2+x3*y1+x1*y2);
     }
 
-    /** Default constructor to create a VO_Edge object */
-    public boolean equals (final VO_Edge e)
+    /** Default constructor to create a VO_Triangle2D object */
+    public VO_Triangle2D() 		{this.m_MatShape = new float[2][3]; this.m_dD = 0.0f;}
+
+    /** Constructor to create a VO_Triangle2D object with three coordinate vertexes in vector format */
+    public VO_Triangle2D(final Point2f[] iVertexes)
     {
-        if ( ( this.index1 == e.GetIndex1() && this.index2 == e.GetIndex2() ) ||
-            ( this.index1 == e.GetIndex2() && this.index2 == e.GetIndex1() ) )
-            return true;
-        else return false;
+    							super(iVertexes);
+    							if(this.m_MatShape[0].length != 3)
+								{
+									System.out.println( "This is not a triangle!");
+									System.out.println( "Please ensure the shape has 3 columns");
+									System.exit(1);
+								}
+								if(this.m_MatShape.length != 2)
+								{
+									System.out.println( "This triangle is not in 2D!");
+									System.exit(1);
+								}
+								this.m_dD 			= this.Calc_dD ();
+	}
+	
+	/** Constructor to create a VO_Triangle2D object with three coordinate vertexes in Mat_<float> format */
+    public VO_Triangle2D(final float[][] iVertexes)
+    {
+    							super(iVertexes);
+    							if(this.m_MatShape[0].length != 3)
+								{
+									System.out.println( "This is not a triangle!");
+									System.out.println( "Please ensure the shape has 3 columns");
+									System.exit(1);
+								}
+								if(this.m_MatShape.length != 2)
+								{
+									System.out.println( "This triangle is not in 2D!");
+									System.exit(1);
+								}
+								this.m_dD	= this.Calc_dD ();
+	}
+
+    /** operator= overloading, similar to copy constructor */
+    VO_Triangle2D				clone (final VO_Triangle2D s)
+    {
+								super.clone(s);
+								this.m_dD	= s.GetdD();
+								return (this);
     }
 
-    /** Get first index of the first edge vertex */
-    public int GetIndex1() { return this.index1;}
+	/** whether the triangle vertexes are list in clockwise or counter-clockwise */
+	public ClockWiseOrNot 		determinant( )
+	{
+								float determ = (this.m_MatShape[0][1] - this.m_MatShape[0][0]) 
+											* (this.m_MatShape[1][2] - this.m_MatShape[1][0]) 
+											- (this.m_MatShape[0][2] - this.m_MatShape[0][0]) 
+											* (this.m_MatShape[1][1] - this.m_MatShape[1][0]);
+								if (determ <= 0.0)
+									return ClockWiseOrNot.COUNTER_CLOCKWISE;
+								else
+									return ClockWiseOrNot.CLOCKWISE;
+	}
 
-    /** Get second index of the first edge vertex */
-    public int GetIndex2() { return this.index2;}
+    /** Get cached denominator of this triangle */
+    public float                GetdD() { return this.m_dD;}
 
-    /** Set the first index of the first edge vertex */
-    public void SetIndex1(int idx1) { this.index1 = idx1;}
-
-    /** Set the second index of the second edge vertex */
-    public void SetIndex2(int idx2) { this.index2 = idx2;}
+    /** Set cached denominator for this triangle */
+    public void                 SetdD(float idD) { this.m_dD = idD;}
 }
