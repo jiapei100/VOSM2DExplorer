@@ -674,13 +674,6 @@ public class VO_TextureModel extends VO_ShapeModel
     	this.m_PCANormalizedTexture.project(ioTexture.GetTheTextureInARow(), outT );
     }
 
-	/** Load Training data for texture model */
-    public boolean						VO_LoadTextureTrainingData( final String[] allImgFiles4Training,
-																	int channels,
-																	int trm)
-	{
-		return false;
-	}
 
     /** Build Texture Model */
     public void                         VO_BuildTextureModel(final String[] allLandmarkFiles4Training,
