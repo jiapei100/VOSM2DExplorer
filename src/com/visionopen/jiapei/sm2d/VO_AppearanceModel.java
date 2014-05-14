@@ -480,14 +480,14 @@ public class VO_AppearanceModel extends VO_TextureModel
 				filereader = new FileReader(filename);
 		        in = new BufferedReader(filereader);
 		        str = in.readLine();	// For the 1st line, the title, but not the data
-		        this.m_MatWeightsScaleShape2Texture = new float[this.m_iNbOfAppearanceEigens][this.m_iNbOfAppearanceEigens];
+		        this.m_MatWeightsScaleShape2Texture = new float[this.m_iNbOfShapeEigens][this.m_iNbOfShapeEigens];
 
-		        for(int i = 0; i < this.m_iNbOfAppearanceEigens; i++)
+		        for(int i = 0; i < this.m_iNbOfShapeEigens; i++)
 		        {
 		        	if ( (str = in.readLine())!=null)
 			        	ss = str.split(" ");
-	        		assert (this.m_iNbOfAppearanceEigens == ss.length);
-		        	for(int j = 0; j < this.m_iNbOfAppearanceEigens; j++)
+	        		assert (this.m_iNbOfShapeEigens == ss.length);
+		        	for(int j = 0; j < this.m_iNbOfShapeEigens; j++)
 		        	{
 		        		this.m_MatWeightsScaleShape2Texture[i][j] = Float.parseFloat(ss[j]);
 		        	}
