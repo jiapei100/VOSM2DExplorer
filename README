@@ -20,6 +20,13 @@ This distribution of VOSM2DExplorer includes:
 
 -------------------------------------------------------------------------------
 
+VOSM2DExplorer is built upon Eclipse SWT. The newest SWT can be found at:
+http://www.eclipse.org/swt/
+Releases->Stable->more:
+http://download.eclipse.org/eclipse/downloads/drops4/R-4.3-201306052000/#SWT
+Pick up a suitable download (64bit or 32bit?)
+
+
 If you are using Ubuntu 14.04, in order to show up Eclipse SWT Slider widgets,
 you've got to have the following 3 packages removed:
 
