@@ -9,10 +9,10 @@ This distribution of VOSM2DExplorer includes:
   3DPARTY               - the 3rd party library used -- nl.skybound.awt.DoublePolygon
   AUTHORS               - current and former authors of VOSM2DExplorer
   CHANGES               - history of changes for the library
-  COPYRIGHT 			- author's copyright, you may have to cite some papers by using this code
-  LICENSE				- current license of VOSM2DExplorer, which obeys LGPL
+  COPYRIGHT             - author's copyright, you may have to cite some papers by using this code
+  LICENSE               - current license of VOSM2DExplorer, which obeys LGPL
   README                - this file
-  src					- all the Java source code
+  src                   - all the Java source code
   VERSION               - version number of this release
 
 -------------------------------------------------------------------------------
