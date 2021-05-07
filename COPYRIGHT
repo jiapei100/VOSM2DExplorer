@@ -8,7 +8,7 @@
 *                                   License Agreement                                               *
 *                           For Vision Open Statistical Models 2D Explorer                          *
 *                                                                                                   *
-* Copyright (C):    2006~2014 by JIA Pei, all rights reserved.                                      *
+* Copyright (C):    2006~2021 by JIA Pei, all rights reserved.                                      *
 *                                                                                                   *
 *                   VOSM2DExplorer is free software under the terms of the GNU Lesser General       *
 *                   Public License (GNU LGPL) as published by the Free Software Foundation;         *
@@ -41,10 +41,11 @@
 *                   PhD thesis, University of Essex, 2010.                                          *
 *                   http://www.visionopen.com/members/jiapei/publications/pei_thesischapter34.pdf   *
 *                                                                                                   *
-* Version:          1.0                                                                             *
+* Version:          1.1                                                                             *
 * Author:           JIA Pei                                                                         *
-* Contact:          jp4work@gmail.com                                                               *
-* URL:              http://www.visionopen.com                                                       *
+* Contact:          jiapei@longervision.com                                                         *
+* URL:              http://www.longervision.com                                                     *
 * Create Date:      2010-12-25                                                                      *
 * Modify Date:      2014-05-07                                                                      *
+* Modify Date:      2021-05-07                                                                      *
 ****************************************************************************************************/

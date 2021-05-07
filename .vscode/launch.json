@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch PCAParameterControllerGroup",
+            "request": "launch",
+            "mainClass": "PCAParameterControllerGroup",
+            "projectName": "VOSM2DExplorer_5a7fa96"
+        },
+        {
+            "type": "java",
+            "name": "Launch VO_2DSMExplorer",
+            "request": "launch",
+            "mainClass": "VO_2DSMExplorer",
+            "projectName": "VOSM2DExplorer_5a7fa96"
+        },
+        {
+            "type": "java",
+            "name": "Launch VO_2DSMGenerator",
+            "request": "launch",
+            "mainClass": "VO_2DSMGenerator",
+            "projectName": "VOSM2DExplorer_5a7fa96"
+        },
+        {
+            "type": "java",
+            "name": "Launch VO_AppearanceModel",
+            "request": "launch",
+            "mainClass": "VO_AppearanceModel",
+            "projectName": "VOSM2DExplorer_5a7fa96"
+        }
+    ]
+}

@@ -8,7 +8,7 @@
 *                                   License Agreement                                               *
 *                           For Vision Open Statistical Models 2D Explorer                          *
 *                                                                                                   *
-* Copyright (C):    2006~2014 by JIA Pei, all rights reserved.                                      *
+* Copyright (C):    2006~2021 by JIA Pei, all rights reserved.                                      *
 *                                                                                                   *
 *                   VOSM2DExplorer is free software under the terms of the GNU Lesser General       *
 *                   Public License (GNU LGPL) as published by the Free Software Foundation;         *
@@ -47,6 +47,7 @@
 * URL:              http://www.visionopen.com                                                       *
 * Create Date:      2010-12-25                                                                      *
 * Modify Date:      2014-05-07                                                                      *
+* Modify Date:      2021-05-07                                                                      *
 ****************************************************************************************************/
 
 package com.visionopen.jiapei.utils;
