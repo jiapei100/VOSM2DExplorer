@@ -35,7 +35,7 @@ After precisely 7 years, do I have the time to have some fun on **VOSM2DExplorer
 - vecmath
 - [jmatharray](https://github.com/yannrichet/jmatharray)
 
-In addition, a modified version of a 3rd party library "nl.skybound.awt.DoublePolygon" is used in **VOSM2DExplorer**, which can be found at "http://www.skybound.nl/products/java/", and the current version is 1.01 .
+In addition, a modified version of a 3rd party library `nl.skybound.awt.DoublePolygon` is used in **VOSM2DExplorer**, which can be found at <http://www.skybound.nl/products/java/>, and the current version is 1.01 .
 
 
 ## About The Author
