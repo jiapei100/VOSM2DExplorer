@@ -41,10 +41,10 @@
 *                   PhD thesis, University of Essex, 2010.                                          *
 *                   http://www.visionopen.com/members/jiapei/publications/pei_thesischapter34.pdf   *
 *                                                                                                   *
-* Version:          1.0                                                                             *
+* Version:          1.1                                                                             *
 * Author:           JIA Pei                                                                         *
-* Contact:          jp4work@gmail.com                                                               *
-* URL:              http://www.visionopen.com                                                       *
+* Contact:          jiapei@longervision.com                                                         *
+* URL:              http://www.longervision.com                                                     *
 * Create Date:      2010-12-25                                                                      *
 * Modify Date:      2014-05-07                                                                      *
 * Modify Date:      2021-05-07                                                                      *
@@ -742,11 +742,4 @@ public class VO_ShapeModel
 	public VO_Edge[]          			GetEdge() {return this.m_vEdge;}
 	public VO_Triangle2DStructure[]		GetTriangle2D() {return this.m_vTemplateTriangle2D;}
 	public VO_Triangle2DStructure[]  	GetNormalizedTriangle2D() {return this.m_vNormalizedTriangle2D;}
-	
-    public static void main(String[] args) {
-    	String fd = "/home/jiapei/MyPrograms/Eclipse/AAMJava3D/traineddata/2D/JIAPei";
-    	VO_ShapeModel shapemodel = new VO_ShapeModel();
-    	shapemodel.VO_LoadParameters4Fitting(fd);
-    	shapemodel.VO_LoadOthers(fd);
-	}
 }

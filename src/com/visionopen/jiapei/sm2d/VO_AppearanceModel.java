@@ -41,10 +41,10 @@
 *                   PhD thesis, University of Essex, 2010.                                          *
 *                   http://www.visionopen.com/members/jiapei/publications/pei_thesischapter34.pdf   *
 *                                                                                                   *
-* Version:          1.0                                                                             *
+* Version:          1.1                                                                             *
 * Author:           JIA Pei                                                                         *
-* Contact:          jp4work@gmail.com                                                               *
-* URL:              http://www.visionopen.com                                                       *
+* Contact:          jiapei@longervision.com                                                         *
+* URL:              http://www.longervision.com                                                     *
 * Create Date:      2010-12-25                                                                      *
 * Modify Date:      2014-05-07                                                                      *
 * Modify Date:      2021-05-07                                                                      *
@@ -732,11 +732,4 @@ public class VO_AppearanceModel extends VO_TextureModel
 	public int                    		GetNbOfEigenAppearanceAtMost() {return this.m_iNbOfEigenAppearanceAtMost;}
 	public int                    		GetNbOfAppearanceEigens() {return this.m_iNbOfAppearanceEigens;}
 	public float                        GetTruncatedPercent_Concatenated() {return this.m_fTruncatedPercent_Appearance;}
-
-    public static void main(String args[]) {
-    	String fd = "/home/jiapei/MyPrograms/Eclipse/AAMJava3D/traineddata/2D/JIAPei";
-    	VO_AppearanceModel appearancemodel = new VO_AppearanceModel();
-    	appearancemodel.VO_LoadParameters4Fitting(fd);
-    	appearancemodel.VO_LoadOthers(fd);
-	}
 }

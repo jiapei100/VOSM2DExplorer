@@ -41,10 +41,10 @@
 *                   PhD thesis, University of Essex, 2010.                                          *
 *                   http://www.visionopen.com/members/jiapei/publications/pei_thesischapter34.pdf   *
 *                                                                                                   *
-* Version:          1.0                                                                             *
+* Version:          1.1                                                                             *
 * Author:           JIA Pei                                                                         *
-* Contact:          jp4work@gmail.com                                                               *
-* URL:              http://www.visionopen.com                                                       *
+* Contact:          jiapei@longervision.com                                                         *
+* URL:              http://www.longervision.com                                                     *
 * Create Date:      2010-12-25                                                                      *
 * Modify Date:      2014-05-07                                                                      *
 * Modify Date:      2021-05-07                                                                      *
@@ -1052,11 +1052,4 @@ public class VO_TextureModel extends VO_ShapeModel
     public VO_WarpingPoint[]      		GetTemplatePointWarpInfo() {return this.m_vTemplatePointWarpInfo;}
     public VO_WarpingPoint[]      		GetNormalizedPointWarpInfo() {return this.m_vNormalizedPointWarpInfo;}
     public String[]						GetStringTrainingImageNames() {return this.m_vStringTrainingImageNames;}
-
-    public static void main(String[] args) {
-    	String fd = "/home/jiapei/MyPrograms/Eclipse/AAMJava3D/traineddata/2D/JIAPei";
-    	VO_TextureModel texturemodel = new VO_TextureModel();
-    	texturemodel.VO_LoadParameters4Fitting(fd);
-    	texturemodel.VO_LoadOthers(fd);
-	}
 }

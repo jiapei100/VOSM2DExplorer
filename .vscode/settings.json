@@ -2,9 +2,15 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "/usr/lib/java/swt-gtk-4.6.0.jar",
-        "/usr/share/java/miglayout-swt.jar",
-        "/usr/share/java/jama.jar",
+        "/usr/share/java/miglayout.jar",
         "/usr/share/java/vecmath.jar",
+        "/usr/share/java/jama.jar",
         "/usr/share/java/jmatharray.jar"
+    ],
+    "java.project.sourcePaths": [
+        "src/com/visionopen/jiapei/sm2d",
+        "src/com/visionopen/jiapei/smbasic",
+        "src/com/visionopen/jiapei/utils",
+        "src/nl/skybound/awt"
     ]
 }

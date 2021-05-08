@@ -41,10 +41,10 @@
 *                   PhD thesis, University of Essex, 2010.                                          *
 *                   http://www.visionopen.com/members/jiapei/publications/pei_thesischapter34.pdf   *
 *                                                                                                   *
-* Version:          1.0                                                                             *
+* Version:          1.1                                                                             *
 * Author:           JIA Pei                                                                         *
-* Contact:          jp4work@gmail.com                                                               *
-* URL:              http://www.visionopen.com                                                       *
+* Contact:          jiapei@longervision.com                                                         *
+* URL:              http://www.longervision.com                                                     *
 * Create Date:      2010-12-25                                                                      *
 * Modify Date:      2014-05-07                                                                      *
 * Modify Date:      2021-05-07                                                                      *
@@ -61,7 +61,7 @@ public class VO_2DSMGenerator {
 	VO_AppearanceModel appearanceModel;
 	float[] onemodel;
 	
-	VO_2DSMGenerator()	{}
+	public VO_2DSMGenerator()	{}
 	
 	public void GenerateAllModels(final String fd)
 	{
@@ -107,13 +107,6 @@ public class VO_2DSMGenerator {
     			e.printStackTrace();
     		}
 		}
-	}
-	
-	public static void main(String[] args) {
-		VO_2DSMGenerator ge = new VO_2DSMGenerator();
-		//ge.GenerateAllModels(args[0]);
-		String fn = "F:\\Research\\Databases\\face\\2D\\EMOUNT\\traineddata\\60Frontal\\BGR\\";
-		ge.GenerateAllModels(fn);
 	}
 }
 

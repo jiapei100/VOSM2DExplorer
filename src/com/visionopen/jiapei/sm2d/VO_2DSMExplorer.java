@@ -41,10 +41,10 @@
 *                   PhD thesis, University of Essex, 2010.                                          *
 *                   http://www.visionopen.com/members/jiapei/publications/pei_thesischapter34.pdf   *
 *                                                                                                   *
-* Version:          1.0                                                                             *
+* Version:          1.1                                                                             *
 * Author:           JIA Pei                                                                         *
-* Contact:          jp4work@gmail.com                                                               *
-* URL:              http://www.visionopen.com                                                       *
+* Contact:          jiapei@longervision.com                                                         *
+* URL:              http://www.longervision.com                                                     *
 * Create Date:      2010-12-25                                                                      *
 * Modify Date:      2014-05-07                                                                      *
 * Modify Date:      2021-05-07                                                                      *
@@ -59,7 +59,6 @@ import java.io.*;
 import javax.vecmath.Point2f;
 
 import nl.skybound.awt.DoublePolygon;
-
 
 import org.eclipse.swt.*;
 import org.eclipse.swt.widgets.*;
@@ -135,7 +134,7 @@ public class VO_2DSMExplorer{
 	private void init() {
 		aamexplorer								= null;
 		palette									= null;
-		display									= null;
+		display									= new Display();;
 		shell									= null;
 		
 		m_appearanceModel 						= new VO_AppearanceModel();
@@ -178,7 +177,7 @@ public class VO_2DSMExplorer{
 		m_PCAAppearanceParamSliderController	= null;
 	}
 	
-	VO_2DSMExplorer()
+	public VO_2DSMExplorer()
 	{
 		init();
 	}
@@ -495,7 +494,7 @@ public class VO_2DSMExplorer{
 	{
 		shell = new Shell(display);
 		shell.setSize(800,600);
-		shell.setText("VOSM 2D Explorer 1.0 by JIA Pei Email: jp4work@gmail.com URL: http://www.visionopen.com");
+		shell.setText("VOSM 2D Explorer 1.1 by Dr. Nobody, Email: jiapei@longervision.com URL: http://www.longervision.com");
 		
 		formLayout = new FormLayout();
 		formLayout.marginWidth = 3;
@@ -908,13 +907,6 @@ public class VO_2DSMExplorer{
 		m_appearanceModel.VO_SParamBackProjectToAlignedShape(m_CurrentShapeParameters, m_CurrentAlignedShape, m_appearanceModel.m_iNbOfShapeDim);
 		m_appearanceModel.VO_TParamBackProjectToNormalizedTexture(m_CurrentTextureParameters, m_CurrentNormalizedTexture, m_appearanceModel.m_iNbOfTextureRepresentations);
 		// this.CBackProjectToAlignedShapeNormalizedTexture();
-	}
-
-	public static void main(String args[])
-	{
-		aamexplorer 					= new VO_2DSMExplorer();
-		display 						= new Display();
-		aamexplorer.start(aamexplorer);
 	}
 }
 
