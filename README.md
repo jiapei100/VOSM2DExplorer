@@ -31,11 +31,13 @@ After precisely 7 years, do I have the time to have some fun on **VOSM2DExplorer
 The workspace contains two folders by default, where:
 
 - `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies. In fact, the following 5 libraries are depent upon.
+- `lib`: the folder to maintain dependencies. In fact, the following 7 libraries are depent upon.
 
   * [swt](https://download.eclipse.org/eclipse/downloads/drops4/R-4.19-202103031800/download.php?dropFile=swt-4.19-gtk-linux-x86_64.zip)
   * [jama](https://math.nist.gov/javanumerics/jama/Jama-1.0.3.jar)
-  * [miglayout](http://www.miglayout.com/)
+  * [miglayout-core](https://oss.sonatype.org/content/repositories/snapshots/com/miglayout/miglayout-core/11.0-SNAPSHOT/miglayout-core-11.0-20210423.210830-1.jar)
+  * [miglayout-ideutil](https://oss.sonatype.org/content/repositories/snapshots/com/miglayout/miglayout-ideutil/11.0-SNAPSHOT/miglayout-ideutil-11.0-20210423.210852-1.jar)
+  * [miglayout-swt](https://oss.sonatype.org/content/repositories/snapshots/com/miglayout/miglayout-swt/11.0-SNAPSHOT/miglayout-swt-11.0-20210423.210841-1.jar)
   * [vecmath](https://download.jar-download.com/cache_jars/javax.vecmath/vecmath/1.5.2/jar_files.zip)
   * [jmatharray](https://github.com/yannrichet/jmatharray/blob/master/dist/jmatharray.jar)
 
